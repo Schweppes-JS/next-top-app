@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Htag, Button, P, Tag, Rating } from "../components";
 
 const Index = (): JSX.Element => {
+	const [rating, setRating] = useState<number>(4);
 	return (
 		<>
 			<Htag tag="h1">Text</Htag>
@@ -24,7 +26,7 @@ const Index = (): JSX.Element => {
 				Green
 			</Tag>
 			<Tag color="primary">Primary</Tag>
-			<Rating rating={4} />
+			<Rating rating={rating} isEditable setRating={setRating} />
 		</>
 	);
 };
