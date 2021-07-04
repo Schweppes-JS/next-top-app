@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Htag, Button, P, Tag, Rating } from "../components";
 
-const Index = (): JSX.Element => {
+import { Htag, Button, P, Tag, Rating } from "../components";
+import { Layout, withLayout } from "../layout/Layout";
+
+const Home = (): JSX.Element => {
 	const [rating, setRating] = useState<number>(4);
 	return (
 		<>
@@ -31,4 +33,4 @@ const Index = (): JSX.Element => {
 	);
 };
 
-export default Index;
+export default withLayout(Home);
