@@ -1,4 +1,4 @@
-import { Htag, Button, P, Tag } from "../components";
+import { Htag, Button, P, Tag, Rating } from "../components";
 
 const Index = (): JSX.Element => {
 	return (
@@ -24,6 +24,7 @@ const Index = (): JSX.Element => {
 				Green
 			</Tag>
 			<Tag color="primary">Primary</Tag>
+			<Rating rating={4} />
 		</>
 	);
 };
