@@ -31,3 +31,17 @@
 	color: var(--white);
 	background-color: var(--primary);
 }
+
+.arrow {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.down {
+	transform: all 0.2s;
+}
+
+.primary svg,
+.ghost:hover svg {
+	fill: var(--white);
+}
