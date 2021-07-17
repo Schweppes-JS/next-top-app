@@ -1,4 +1,4 @@
-import ArrowIcon from "./Arrow.tsx";
+import ArrowIcon from "./Arrow";
 
 import { ButtonProps } from "./Button.props";
 import styles from "./Button.module.css";

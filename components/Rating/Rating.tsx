@@ -2,7 +2,7 @@ import { useEffect, useState, KeyboardEvent } from "react";
 import cn from "classnames";
 
 import { RatingProps } from "./Rating.props";
-import StarIcon from "./Star.tsx";
+import StarIcon from "./Star";
 import styles from "./Rating.module.css";
 
 export const Rating = ({ isEditable = true, rating, setRating, ...props }: RatingProps): JSX.Element => {
@@ -18,14 +18,14 @@ export const Rating = ({ isEditable = true, rating, setRating, ...props }: Ratin
 					onClick={() => onClick(i + 1)}
 					key={i}
 				>
-					<StarIcon onKeyDown={(e: KeyboardEvent<SVGAElement>) => isEditable && handleSpace(i + 1, e)} tabIndex={isEditable ? 0 : -1} />
+					<StarIcon onKeyDown={(e: KeyboardEvent<SVGSVGElement>) => isEditable && handleSpace(i + 1, e)} tabIndex={isEditable ? 0 : -1} />
 				</span>
 			);
 		});
 		setRattingArray(updatedArray);
 	};
 
-	const handleSpace = (i: number, e: KeyboardEvent<SVGAElement>) => {
+	const handleSpace = (i: number, e: KeyboardEvent<SVGSVGElement>) => {
 		e.code === "Space" && setRating && setRating(i);
 	};
 
