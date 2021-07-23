@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import Link from "next/link";
 import { AppContext } from "../../context/app.context";
 import { FirstLevelMenuItem, PageItem } from "../../interfaces/menu.interface";
 import CoursesIcon from "../../helpers/icons/courses.svg";
@@ -23,16 +24,18 @@ const Menu = (): JSX.Element => {
 			<>
 				{firstLevelMenu.map((m) => (
 					<div key={m.route}>
-						<a href={`/${m.route}`}>
-							<div
-								className={cn(styles.firstLevel, {
-									[styles.firstLevelActive]: m.id === firstCategory,
-								})}
-							>
-								{m.icon}
-								<span>{m.name}</span>
-							</div>
-						</a>
+						<Link href={`/${m.route}`} href={`/${m.route}`}>
+							<a>
+								<div
+									className={cn(styles.firstLevel, {
+										[styles.firstLevelActive]: m.id === firstCategory,
+									})}
+								>
+									{m.icon}
+									<span>{m.name}</span>
+								</div>
+							</a>
+						</Link>
 						{m.id === firstCategory && buildSecondLevel(m)}
 					</div>
 				))}
@@ -61,14 +64,15 @@ const Menu = (): JSX.Element => {
 
 	const buildThirdLevel = (pages: PageItem[], route: string) => {
 		return pages.map((p) => (
-			<a
-				href={`/${route}/${p.alias}`}
-				className={cn(styles.thirdLevel, {
-					[styles.thirdLevelActive]: false,
-				})}
-			>
-				{p.category}
-			</a>
+			<Link href={`/${route}/${p.alias}`}>
+				<a
+					className={cn(styles.thirdLevel, {
+						[styles.thirdLevelActive]: false,
+					})}
+				>
+					{p.category}
+				</a>
+			</Link>
 		));
 	};
 
