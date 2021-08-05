@@ -1,4 +1,5 @@
-import { Advantages, Card, HhData, Htag, P, Tag } from "../../components";
+import { Advantages, Card, HhData, Htag, P, Sort, Tag } from "../../components";
+import { SortEnum } from "../../components/Sort/Sort.props";
 import { TopLevelCategory } from "../../interfaces/page.interface";
 import styles from "./TopPageComponent.module.css";
 import { TopPageComponentProps } from "./TopPageComponent.props";
@@ -14,7 +15,7 @@ const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentPro
 						{products.length}
 					</Tag>
 				)}
-				<span>Сортировка</span>
+				<Sort sort={SortEnum.Rating} setSort={() => {}} />
 			</div>
 			<div>{products && products.map((p) => <div key={p._id}>{p.title}</div>)}</div>
 			<div className={styles.hhTitle}>
@@ -32,7 +33,7 @@ const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentPro
 					<Advantages advantages={page.advantages} />
 				</>
 			)}
-			{page.seoText && <P>{page.seoText}</P>}
+			{page.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{ __html: page.seoText }} />}
 			<Htag tag="h2">Получаемые навыки</Htag>
 			{page.tags.map((t) => (
 				<Tag key={t} color="primary">
