@@ -3,17 +3,22 @@
 
 	box-sizing: border-box;
 	margin-right: 5px;
+
 	border-radius: 20px;
-	padding: 5px 10px;
 }
 
 .s {
+	padding: 5px 10px;
+
 	font-size: 12px;
 	line-height: 12px;
 }
 
 .m {
+	padding: 5px 10px;
+
 	font-size: 14px;
+	line-height: 14px;
 }
 
 .ghost {
@@ -21,26 +26,28 @@
 }
 
 .red {
-	font-weight: bold;
 	color: var(--white);
-	background-color: #de0000;
+	background: #DE0000;
+
+	font-weight: bold;
 }
 
 .grey {
-	font-weight: bold;
 	color: var(--white);
-	background-color: #b3c0d9;
+	background: #51648C;
+
+	font-weight: bold;
 }
 
 .green {
-	font-weight: bold;
 	color: var(--green);
-	background-color: var(--green-light);
+	background: var(--green-light);
+
+	font-weight: bold;
 }
 
 .primary {
-	font-weight: bold;
 	color: var(--primary);
-	background-color: none;
 	border: 1px solid var(--primary);
+	background: none;
 }

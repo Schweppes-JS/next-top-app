@@ -2,7 +2,7 @@ export enum TopLevelCategory {
 	Courses,
 	Services,
 	Books,
-	Products,
+	Products
 }
 
 export interface TopPageAdvantage {
@@ -37,3 +37,5 @@ export interface TopPageModel {
 	updatedAt: Date;
 	hh?: HhData;
 }
+
+
